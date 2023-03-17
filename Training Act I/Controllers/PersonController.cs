@@ -8,17 +8,11 @@ namespace Training_Act_I.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        //[HttpGet]
-        // public async Task<IActionResult> Get()
-        // {
-        //     Person person = new Person();
-        //     foreach (string item in person.Name) { Console.WriteLine(item); }
-
-        //     return Ok(person.Name);
-
-        // }
-
-        public string[] Person = {
+        [HttpGet("Act1")]
+        public async Task<IActionResult> Person()
+        {
+            string[] personName =
+            {
             "One",
             "Two",
             "Three",
@@ -34,8 +28,19 @@ namespace Training_Act_I.Controllers
             "Thirteen",
             "Fourteen",
             "15th"
-        };
-   
-       
+            };
+
+            Trainee t1 = new Trainee(personName[0]);
+            Trainee t2 = new Trainee(personName[1]);
+            Trainer tner = new Trainer(personName[2]);
+
+            Console.WriteLine(t1.Study());
+            Console.WriteLine(t2.Study());
+            Console.WriteLine(tner.Explain());
+
+            return Ok(personName);
+        }
+
+    
     }
 }

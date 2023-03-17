@@ -2,9 +2,12 @@
 {
     public class Trainer : Person
     {
-        static void ExplainMethod()
-        {
-            Console.WriteLine("trainer is explaining.");
-        }
+        public Trainer(string personName) : base(personName) { }
+
+        public string Explain()
+            {
+                return $"Trainer {PersonName} is explaning!";
+            }
+        
     }
 }

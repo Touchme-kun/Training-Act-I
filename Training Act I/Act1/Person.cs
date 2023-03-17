@@ -2,7 +2,12 @@
 {
     public class Person
     {
-        public string[] Name = { };
+        public string PersonName
+        { get; set; }
 
+        public Person(string personName)
+        {
+            PersonName = personName;
+        }
     }
 }
