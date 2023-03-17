@@ -13,14 +13,13 @@ namespace Training_Act_I.Controllers
     [ApiController]
     public class AgeController : ControllerBase
     {
-        [HttpGet("YearAge")]
+        [HttpGet("Act3")]
         public async Task<IActionResult> Get(int Year)
         {
             Age a = new Age();
-            a.AgeYear = Math.Abs(Year);
-
-            return Ok(a.ageLength(Year));
-
+            a.AgeYear = Math.Abs(Year) * 360;
+             
+            return Ok(a);
 
         }
     }
