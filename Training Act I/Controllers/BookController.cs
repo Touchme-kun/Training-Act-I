@@ -19,7 +19,7 @@ namespace Training_Act_I.Controllers
 
         //mysql
         [HttpGet("Act4")]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<Book>> Get()
         {
             var Book = await _context.Books.ToListAsync();
             return Ok(Book);

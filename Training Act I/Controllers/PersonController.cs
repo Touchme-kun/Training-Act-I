@@ -9,7 +9,9 @@ namespace Training_Act_I.Controllers
     public class PersonController : ControllerBase
     {
         [HttpGet("Act1")]
-        public async Task<IActionResult> Person()
+        [Produces("application/json")]
+        public async Task<ActionResult<Person>> Person()
+
         {
             string[] personName =
             {

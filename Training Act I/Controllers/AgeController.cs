@@ -14,7 +14,7 @@ namespace Training_Act_I.Controllers
     public class AgeController : ControllerBase
     {
         [HttpGet("Act3")]
-        public async Task<IActionResult> Get(int Year)
+        public async Task<ActionResult<Age>> Get(int Year)
         {
             Age a = new Age();
             a.AgeYear = Math.Abs(Year) * 360;
